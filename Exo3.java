@@ -1,25 +1,25 @@
 import java.util.*;
+
 public class Exo3 {
-    static String Enter;
-    static char a ;
-    static char star;
+    public static void main(String[] args) {
+        System.out.println("Enter String:");
+        Scanner userString = new Scanner(System.in);
+        String enter = userString.nextLine();
+        String updatedString = "";
 
-    static String updateString;
-    public static void main(String[] args){
-        System.out.println("Enter String");
-        Scanner text = new Scanner(System.in);
-        Enter = text.nextLine();
-        if (Enter.length()>2){
-            for (int i =0;i<Enter.length();i++) {
-                if (i%2==0){
-                 a = Enter.charAt(i);
-                 star = '*';
-                 updateString = Enter.replace(a, star);
-                 Enter=updateString;
+        if (enter.length() > 1) {
+            for (int i = 0; i < enter.length(); i++) {
+                if (i % 2 == 0) {
+                    updatedString += '*';
+                } else {
+                    updatedString += enter.charAt(i);
                 }
-
             }
+        } else {
+            updatedString = enter;
         }
-        System.out.println(Enter);
+
+        System.out.println(updatedString);
     }
 }
+
